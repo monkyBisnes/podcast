@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Podcast</title>
+
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script language="javascript" src="js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="container"> 
+        
+ 		<section class="formularioPodcast">
+        	<div>
+            	<form name="formPodcast">
+                	
+                    <div class="form-group">
+    					<label for="url">ULR Podcast</label>
+                		<input type="text" class="form-control" id="url" name="urlPodcast" placeholder="URL">
+              		</div>
+                    <input type="button" class="btn btn-default" value='Enviar' onclick="enviaPodcast(this.form); return false;" />
+                   	
+               	</form>
+           	</div>
+     	</section>
+      	
+        <section class="infoPodcast">
+            <div class="row">
+            
+                <div class="col-xs-4 col-md-3" >
+                    <div id="infoCanal">
+                    
+                        <div id="imagePodcast"></div>
+                    	<div id="namePodcast"></div>
+                        <div id="autorPodcast"></div>
+                    </div>
+                </div>
+            
+            
+                <div class="col-xs-12 col-sm-8 col-md-9" >
+                	<div id="contenido">
+                    
+                    </div>
+                </div>
+                
+            </div><!--end row-->
+     	</section>
+        
+    </div>
+
+<script>
+	function enviaPodcast(form) {
+		var URL = form.urlPodcast.value;
+    cargaContenido(URL);
+	}
+</script>
+<script language="javascript" src="js/podcast.js"></script>
+
+	
+
+</body>
+</html>

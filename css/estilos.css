@@ -1,0 +1,10 @@
+/* CSS Document */
+body{
+	font-family: 'Josefin Sans', sans-serif;
+}
+.container-fluid{ background-color:#D32A2D;}
+
+.formularioPodcast{
+	padding:30px;
+}
+
