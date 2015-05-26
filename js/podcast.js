@@ -45,10 +45,18 @@ function cargaContenido(url){
 			info = "";
 			for(var i=0; i< x.length; i++) 
 			{
+				audio = x[i].getElementsByTagName("enclosure");
+				if(audio.length){
+			   		var audioPod =audio[0].getAttribute('url');
+				}
+				
+				
 				info += '<div class="titulo"><h4>'+(x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue) +'</h4></div>' + 
-						'<div class="fecha">'+(x[i].getElementsByTagName("pubDate")[0].childNodes[0].nodeValue).slice(0, -9) +'</div>' +
-						'<div class="descripcion">'+(x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue) +'</div>' +
-						'<div class="duracion">'+(x[i].getElementsByTagNameNS(uri, "duration")[0].childNodes[0].nodeValue) +'</div><hr>'  ;
+						'<div class="col-xs-12 col-sm-12 col-md-9"><div class="fecha">'+(x[i].getElementsByTagName("pubDate")[0].childNodes[0].nodeValue).slice(0, -9) +'</div>' +
+						'<div class="descripcion">'+(x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue) +'</div></div>' +
+						//'<div class="duracion">'+(x[i].getElementsByTagNameNS(uri, "duration")[0].childNodes[0].nodeValue) +'</div>' +
+						'<div class="audio"><audio src="'+ audioPod +'" preload="none" controls></div><hr>';
+					
 					
 				document.getElementById("contenido").innerHTML= info;
 			}

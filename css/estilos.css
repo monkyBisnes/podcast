@@ -7,4 +7,6 @@ body{
 .formularioPodcast{
 	padding:30px;
 }
+audio{ width:150px;}
+.audio{ min-height:80px;}
 
